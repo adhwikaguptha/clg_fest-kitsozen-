@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Events - Kitsozen'25</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="cultural.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span>Evento</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="index.html" class="nav-link">ABOUT US</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">EVENTS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="technical.html" class="nav-link">TECHNICAL</a></li>
+                        <li><a href="non-technical.html" class="nav-link">NON-TECHNICAL</a></li>
+                        <li><a href="#cultural-events" class="nav-link">CULTURAL</a></li>
+                        <li><a href="games.html" class="nav-link">GAMES</a></li>
+                        <li><a href="sports.html" class="nav-link">SPORTS</a></li>
+                        <li><a href="special.html" class="nav-link">SPECIAL</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav-link">COORDINATORS</a></li>
+                <li><a href="#" class="nav-link">TIMELINES</a></li>
+                <li><a href="#" class="nav-link" data-section="contacts">STALLS</a></li>
+                <li><a href="#" class="nav-link">CONTACTS</a></li>
+                <li class="dropdown">
+                    <a href="#" class="buy-ticket dropdown-toggle" data-section="login">LOGIN</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="nav-link" data-section="student-login">STUDENT</a></li>
+                        <li><a href="#" class="nav-link" data-section="volunteer-login">VOLUNTEER</a></li>
+                        <li><a href="#" class="nav-link" data-section="coordinator-login">COORDINATOR LOGIN</a></li>
+                        <li><a href="#" class="nav-link" data-section="admin-login">ADMIN</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cultural-events" id="cultural-events">
+            <div class="events-header">
+                <h1>Cultural Events</h1>
+                <p>Celebrate diversity with vibrant cultural events at KITSozone'25!</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-block">
+                    <div class="event-image">
+                        <img src="cl1.jpg" alt="Cultural Event 1">
+                    </div>
+                    <div class="event-info">
+                        <h3>Dance Competition</h3>
+                        <p>Unleash your moves and set the stage on fire with electrifying performances that captivate the audience. 💃🔥</p>
+                        <a href="#" class="register-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="event-block">
+                    <div class="event-image">
+                        <img src="cl2.jpg" alt="Cultural Event 2">
+                    </div>
+                    <div class="event-info">
+                        <h3>Flashmob</h3>
+                        <p>A spontaneous burst of synchronized energy, where dancers surprise and engage the crowd with a dynamic, high-energy performance. 🎶🎭</p>
+                        <a href="#" class="register-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="event-block">
+                    <div class="event-image">
+                        <img src="cl3.jpg" alt="Cultural Event 3">
+                    </div>
+                    <div class="event-info">
+                        <h3>Singing Competition</h3>
+                        <p>Let your voice shine as you compete against the best, hitting high notes and winning hearts. 🎤✨</p>
+                        <a href="#" class="register-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="event-block">
+                    <div class="event-image">
+                        <img src="cl4.jpg" alt="Cultural Event 4">
+                    </div>
+                    <div class="event-info">
+                        <h3>Live Band</h3>
+                        <p>Experience the magic of live music as bands rock the stage with powerful melodies and electrifying rhythms. 🎸🎶</p>
+                        <a href="#" class="register-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="event-block">
+                    <div class="event-image">
+                        <img src="cl5.jpg" alt="Cultural Event 5">
+                    </div>
+                    <div class="event-info">
+                        <h3>Skits & Roleplay</h3>
+                        <p> Step into a new persona and bring stories to life with dramatic expressions, humor, and creativity. 🎭🎬</p>
+                        <a href="#" class="register-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdownMenu.classList.toggle('show');
+        });
+        // Add this after the existing dropdownToggle event listener
+const loginDropdownToggle = document.querySelector('.buy-ticket.dropdown-toggle');
+const loginDropdownMenu = loginDropdownToggle.nextElementSibling;
+
+loginDropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginDropdownMenu.classList.toggle('show');
+});
+
+// Close login dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!loginDropdownToggle.contains(e.target) && !loginDropdownMenu.contains(e.target)) {
+        loginDropdownMenu.classList.remove('show');
+    }
+});
+
+        document.addEventListener('click', (e) => {
+            if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
